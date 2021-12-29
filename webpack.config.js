@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: './index.js',
-    mode: 'development',
+    mode: 'production',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
@@ -12,13 +12,9 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                include: [path.resolve(__dirname, 'lib'), path.resolve(__dirname, 'core')],
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
                 }
             },
         ]
