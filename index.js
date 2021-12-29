@@ -10,21 +10,25 @@ import ServiceServer from "./core/ServiceServer";
 import { ServiceListProvider, useServiceList } from "./core/ServiceList";
 import RosConnect from "./core/RosConnect";
 
-export {
-    DeleteParam,
-    GetParam,
-    SetParam,
-    useParam,
-    ParamListProvider,
-    useParamList,
-    Publisher,
-    Subscriber,
-    useMsg,
-    TopicListProvider,
-    useTopicList,
-    ServiceCaller,
-    ServiceServer,
-    ServiceListProvider,
-    useServiceList,
-    RosConnect
+const returnLibrary = () => {
+    return {
+        DeleteParam,
+        GetParam,
+        SetParam,
+        useParam,
+        ParamListProvider,
+        useParamList,
+        Publisher,
+        Subscriber,
+        useMsg,
+        TopicListProvider,
+        useTopicList,
+        ServiceCaller,
+        ServiceServer,
+        ServiceListProvider,
+        useServiceList,
+        RosConnect
+    }
 }
+
+export default returnLibrary()
