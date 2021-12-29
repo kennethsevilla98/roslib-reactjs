@@ -3,11 +3,17 @@ import PropTypes from 'prop-types';
 import { RosProvider } from '../lib/ros';
 import { Connection } from '../lib/connection';
 
-export const RosConnect = (props) => {
+const defaultProps = {
+    timeout: 1000,
+    autoconnect: false,
+    url: "ws://localhost:9090",
+}
 
-    const timeout = props.timeout || 1000;
-    const autoconnect = props.autoconnect || false;
-    const url = props.url || "ws://localhost:9090";
+export const RosConnect = (props = defaultProps) => {
+
+    const timeout = props.timeout;
+    const autoconnect = props.autoconnect;
+    const url = props.url;
 
     return (
         <RosProvider>

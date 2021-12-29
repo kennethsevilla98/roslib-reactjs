@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { setParam } from '../lib/param';
 import { useRos } from '../lib/ros';
 
-const SetParam = props => {
+const defaultProps = {
+    toggler: false,
+    param: {}
+};
+
+const SetParam = (props = defaultProps) => {
     
     const ROS = useRos();
 

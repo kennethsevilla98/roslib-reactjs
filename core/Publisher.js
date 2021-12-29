@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import { useRos } from '../lib/ros';
 import { createPublisher, publish, removePublisher, topicSettings } from '../lib/topic';
 
-const Publisher = (props) => {
+const defaultProps = {
+    name: "",
+    type: "",
+    rate: null,
+    autoRepeat: false,
+    message: null,
+}
+
+const Publisher = (props = defaultProps) => {
 
     const ROS = useRos();
     const [publisher, setPublisher] = useState({});

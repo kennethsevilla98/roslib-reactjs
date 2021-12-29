@@ -3,7 +3,13 @@ import PropTypes from 'prop-types'
 import { useRos } from '../lib/ros';
 import { advertiseService, unadvertiseService, serviceSettings } from '../lib/service';
 
-const ServiceServer = props => {
+const defaultProps = {
+    name: "",
+    type: "",
+    callback: () => null,
+};
+
+const ServiceServer = (props = defaultProps) => {
     
     const name = props.name;
     const type = props.type;
