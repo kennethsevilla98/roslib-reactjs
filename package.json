@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./src/main.js -o ./build/index.js",
-    "build": "webpack"
+    "build": "webpack",
+    "pack": "npm pack --pack-destination ./build/"
   },
   "repository": {
     "type": "git",
