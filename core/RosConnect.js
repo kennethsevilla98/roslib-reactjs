@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RosProvider } from './ros';
-import { Connection } from './connection';
+import { RosProvider } from '../lib/ros';
+import { Connection } from '../lib/connection';
 
 export const RosConnect = (props) => {
 

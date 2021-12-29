@@ -1,7 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react'
 import PropTypes from 'prop-types';
-import { useRos } from './ros';
-import { getTopics } from './topic'
+import { useRos } from '../lib/ros';
+import { getTopics } from '../lib/topic'
 
 const TopicsContext = createContext({})
 

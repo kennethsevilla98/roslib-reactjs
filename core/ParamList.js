@@ -1,7 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react'
 import PropTypes from 'prop-types';
-import { useRos } from './ros';
-import { getParams } from './param'
+import { useRos } from '../lib/ros';
+import { getParams } from '../lib/param'
 
 const ParamsContext = createContext([])
 

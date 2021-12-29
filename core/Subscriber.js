@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import PropTypes from 'prop-types'
-import { useRos } from './ros';
-import { topicSettings, subscribe, unsubscribe } from './topic';
+import { useRos } from '../lib/ros';
+import { topicSettings, subscribe, unsubscribe } from '../lib/topic';
 
 const MsgContext = createContext({});
 

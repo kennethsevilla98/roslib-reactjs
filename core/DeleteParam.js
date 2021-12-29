@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import { deleteParam } from './param';
-import { useRos } from './ros';
+import { deleteParam } from '../lib/param';
+import { useRos } from '../lib/ros';
 
 const DeleteParam = props => {
     

@@ -1,7 +1,7 @@
 import React, {useEffect, useState, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import { useRos } from './ros';
-import { createPublisher, publish, removePublisher, topicSettings } from './topic';
+import { useRos } from '../lib/ros';
+import { createPublisher, publish, removePublisher, topicSettings } from '../lib/topic';
 
 const Publisher = (props) => {
 

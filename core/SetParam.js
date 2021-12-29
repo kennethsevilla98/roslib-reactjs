@@ -1,7 +1,7 @@
 import React, {useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import { setParam } from './param';
-import { useRos } from './ros';
+import { setParam } from '../lib/param';
+import { useRos } from '../lib/ros';
 
 const SetParam = props => {
     

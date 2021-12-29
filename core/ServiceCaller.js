@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useRos } from './ros';
-import { callService, serviceSettings } from './service';
+import { useRos } from '../lib/ros';
+import { callService, serviceSettings } from '../lib/service';
 
 const ServiceCaller = props => {
 

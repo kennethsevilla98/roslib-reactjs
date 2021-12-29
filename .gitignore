@@ -1,7 +1,6 @@
 node_modules/
-
+release/
 build/
-
 src/debug/
 
 # Ignore files with sensitive environment variables

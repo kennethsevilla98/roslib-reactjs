@@ -1,7 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react'
 import PropTypes from 'prop-types';
-import { useRos } from './ros';
-import { getServices } from './service'
+import { useRos } from '../lib/ros';
+import { getServices } from '../lib/service'
 
 const ServicesContext = createContext([])
 
