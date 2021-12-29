@@ -2,10 +2,10 @@
   "name": "roslib-reactjs",
   "version": "1.0.0",
   "description": "Collection of components to connect rosbridge_server websocket to ReactJS and React Native",
-  "module": "src/main.mjs",
+  "main": "build/index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./src/main.js -o ./build/main.js",
-    "build": "webpack --mode production ./src/main.js -o ./build/main.js"
+    "dev": "webpack --mode development --watch ./src/main.js -o ./build/index.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
