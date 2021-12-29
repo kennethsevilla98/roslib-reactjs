@@ -8,13 +8,14 @@ Available components:
 2) Subscriber
 3) Publisher
 4) ServiceCaller
-5) ServiceServer
-6) GetParam
-7) SetParam
-8) DeleteParam
-9) TopicList
-10) ServiceList
-11) ParamList
+5) ImageDisplay
+6) ServiceServer
+7) GetParam
+8) SetParam
+9) DeleteParam
+10) TopicList
+11) ServiceList
+12) ParamList
 
 Available hooks:
 
@@ -28,7 +29,7 @@ Available hooks:
 
 ### 1- RosConnect
 
-*Wrapper that makes websocket topic, services and parameters data available to your components.*
+*Wrapper that makes websocket topic, services and parameters data available to your components. It requires rosbridge_server up - `roslaunch rosbridge_server rosbridge_websocket.launch`*
 
 **Props:**
 
@@ -114,12 +115,39 @@ React will trigger a re-render of the child component every time that a new mess
 **Example:**
 
     <ServiceCaller
-        name"/myService"
+        name="/myService"
         type="custom_msgs/customService"
         request={{command: "say hi!"}}
         callback={(response) => {console.log(response.values)}}
         failedCallback={(msg) => {console.log(msg)}}
         toggler={statefulBoolean}}
+    />
+
+### 5- ImageDisplay
+
+*Component that displays an image from the web_video_server node into the browser. It uses the `<img>` tag. Does not require being a child Component of a RosConnect because it does not rely on the websocket connection*
+
+**Props:**
+
+- host - *string* - web_video_server host - REQUIRED. Example: "http://localhost"
+- port - *number* - web_video_server port - REQUIRED. Example: 8080
+- topic - *string* - base topic name for your camera image. Example "/mycamera"
+- defaultTransport - *string* - ROS image transport plugin, default to "raw", also "compressed" and "theora" may be available depending on the web_video_server.
+- transport - *string* - Compression algorithm, default to "mjpeg", available also "ros_compressed". Check web_video_server documentation for other available compression algorithms.
+- height - *number* - Image height pixel number.
+- width - *number* - Image width pixel number.
+- quality - *number* - Ranging from 0 to 100, used only if transport layer ("transport" prop) is "mjpeg"
+
+**Example:**
+
+    <ImageDisplay
+        host="http://localhost"
+        port={8080}
+        topic="/myCamera"
+        transport="ros_compressed"
+        defaultTransport="compressed"
+        height={480}
+        width={640}
     />
 
 Check the source code in the "core" folder of the Github repo for other Component props and usage.

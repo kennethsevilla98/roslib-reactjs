@@ -9,6 +9,7 @@ import ServiceCaller from "./core/ServiceCaller";
 import ServiceServer from "./core/ServiceServer";
 import { ServiceListProvider, useServiceList } from "./core/ServiceList";
 import RosConnect from "./core/RosConnect";
+import ImageDisplay from "./core/ImageDisplay";
 
 export {
     DeleteParam,
@@ -26,5 +27,6 @@ export {
     ServiceServer,
     ServiceListProvider,
     useServiceList,
-    RosConnect
+    RosConnect,
+    ImageDisplay,
 }
