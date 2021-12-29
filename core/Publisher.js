@@ -12,6 +12,7 @@ import { createPublisher, publish, removePublisher, topicSettings } from '../lib
  * @param props.rate
  * @param props.autoRepeat
  * @param props.message
+ * @param props.queue_size
  */
 
 const Publisher = (props) => {
@@ -22,9 +23,10 @@ const Publisher = (props) => {
     const [toggler, setToggler] = useState(false);
     const timeInterval = Math.floor(1000/props.rate);
 
+    const queue_size = props.queue_size || 10;
     
     const initPub = () => {
-        const settings = topicSettings(ROS, props.name, props.type, props.rate);
+        const settings = topicSettings(ROS, props.name, props.type, props.rate, queue_size);
         const topic = createPublisher(settings);
         setPublisher(topic);
     }
@@ -78,10 +80,11 @@ const Publisher = (props) => {
 
 Publisher.propTypes = {
     message: PropTypes.object,
-    autoRepeat: PropTypes.bool,
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     rate: PropTypes.number.isRequired,
+    autoRepeat: PropTypes.bool,
+    publish_rate: PropTypes.number,
 }
 
 export default Publisher;

@@ -11,7 +11,7 @@ import { callService, serviceSettings } from '../lib/service';
  * @param props.toggler
  * @param props.callback
  * @param props.failedCallback
- * @param props.values 
+ * @param props.request 
  */
 
 const ServiceCaller = (props) => {
@@ -21,7 +21,7 @@ const ServiceCaller = (props) => {
     const toggler = props.toggler;
     const callback = props.callback;
     const failedCallback = props.failedCallback
-    const values = props.values || {};
+    const request = props.request || {};
 
     const ROS = useRos();
 
@@ -29,7 +29,7 @@ const ServiceCaller = (props) => {
         if (toggler) {
             callService(
                 serviceSettings(ROS, name, type), 
-                values, 
+                request, 
                 callback, 
                 failedCallback
             );
@@ -44,10 +44,10 @@ const ServiceCaller = (props) => {
 ServiceCaller.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    callback: PropTypes.func.isRequired,
-    failedCallback: PropTypes.func.isRequired,
+    callback: PropTypes.func,
+    failedCallback: PropTypes.func,
     toggler: PropTypes.bool,
-    values: PropTypes.object,
+    request: PropTypes.object,
 }
 
 export default ServiceCaller

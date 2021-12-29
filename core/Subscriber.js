@@ -10,9 +10,11 @@ export const Subscriber = (props) => {
     const ROS = useRos();
     const [message, setMessage] = useState(null);
 
+    const queue_size = props.queue_size || 10
+
     useEffect(() => {
         const topic = subscribe(
-            topicSettings(ROS, props.name, props.type, props.rate),
+            topicSettings(ROS, props.name, props.type, props.rate, queue_size),
             (msg) => {setMessage(msg)}
         );
         return () => {
@@ -32,6 +34,7 @@ Subscriber.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     rate: PropTypes.number.isRequired,
+    queue_size: PropTypes.number
 };
 
 export const useMsg = () => {
