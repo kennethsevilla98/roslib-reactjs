@@ -26,5 +26,5 @@ export {
     ServiceServer,
     ServiceListProvider,
     useServiceList,
-    RosConnect,
+    RosConnect
 }

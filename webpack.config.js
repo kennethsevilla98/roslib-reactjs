@@ -1,7 +1,7 @@
 var path = require('path')
 module.exports = {
     entry: './index.js',
-    mode: 'production',
+    mode: 'development',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
