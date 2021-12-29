@@ -1,4 +1,6 @@
 build/
+core/
+lib/
 node_modules/
 release/
 webpack.config.js
