@@ -14,9 +14,9 @@ import { Connection } from '../lib/connection';
 
 export const RosConnect = (props) => {
 
-    const timeout = props.timeout;
-    const autoconnect = props.autoconnect;
-    const url = props.url;
+    const timeout = props.timeout || 1000;
+    const autoconnect = props.autoconnect || false;
+    const url = props.url || "ws://localhost:9090";
 
     return (
         <RosProvider>

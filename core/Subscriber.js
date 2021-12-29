@@ -5,13 +5,7 @@ import { topicSettings, subscribe, unsubscribe } from '../lib/topic';
 
 const MsgContext = createContext({});
 
-const defaultProps = {
-    name: "",
-    type: "",
-    rate: null,
-};
-
-export const Subscriber = (props = defaultProps) => {
+export const Subscriber = (props) => {
 
     const ROS = useRos();
     const [message, setMessage] = useState(null);
