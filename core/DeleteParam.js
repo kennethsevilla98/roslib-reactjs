@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { deleteParam } from '../lib/param';
 import { useRos } from '../lib/ros';
 
-const defaultProps = {
-    param: null,
-    toggler: false,
-}
+/**
+ * 
+ * @param props
+ * @param props.toggler
+ * @param props.param
+ */
 
-const DeleteParam = (props = defaultProps) => {
+const DeleteParam = (props) => {
     
     const ROS = useRos();
 

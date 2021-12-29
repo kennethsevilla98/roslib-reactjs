@@ -9,11 +9,13 @@ const failedCallback = (msg) => {
     console.log(msg);
 }
 
-const defaultProps = {
-    toggler: false
-}
+/**
+ * 
+ * @param props
+ * @param props.toggler
+ */
 
-export const ParamListProvider = (props = defaultProps) => {
+export const ParamListProvider = (props) => {
 
     const ROS = useRos();
 

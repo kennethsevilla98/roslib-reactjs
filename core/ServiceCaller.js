@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import { useRos } from '../lib/ros';
 import { callService, serviceSettings } from '../lib/service';
 
-const defaultProps = {
-    name: "",
-    type: "",
-    toggler: false,
-    callback: () => null,
-    failedCallback: () => null,
-    values: {}
-};
+/**
+ * 
+ * @param props 
+ * @param props.name
+ * @param props.type
+ * @param props.toggler
+ * @param props.callback
+ * @param props.failedCallback
+ * @param props.values 
+ */
 
-const ServiceCaller = (props = defaultProps) => {
+const ServiceCaller = (props) => {
 
     const name = props.name;
     const type = props.type;

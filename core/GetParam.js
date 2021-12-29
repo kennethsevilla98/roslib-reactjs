@@ -5,14 +5,14 @@ import { useRos } from '../lib/ros'
 
 const ParamContext = createContext(null);
 
-const defaultProps = {
-    param: {
-        name: ""
-    },
-    toggler: false,
-}
+/**
+ * 
+ * @param props
+ * @param props.toggler
+ * @param props.param
+ */
 
-export const GetParam = (props = defaultProps) => {
+export const GetParam = (props) => {
     
     const ROS = useRos();
 
