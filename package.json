@@ -1,6 +1,6 @@
 {
   "name": "roslib-reactjs",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Collection of components to connect rosbridge_server websocket to ReactJS and React Native",
   "main": "build/index.js",
   "scripts": {
