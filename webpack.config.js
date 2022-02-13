@@ -1,13 +1,16 @@
-var path = require('path');
+const path = require("path")
 
 module.exports = {
     entry: './index.js',
     mode: 'production',
+    experiments: {
+        outputModule: true,
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
         library: {
-            type: "commonjs-static"
+            type: "module"
         },
         environment: {
             module: true,
